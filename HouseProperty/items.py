@@ -42,9 +42,20 @@ class HouseDetailItem(scrapy.Item):
     p_area = scrapy.Field()  # 占地面积
     p_volume_rate = scrapy.Field()  # 容积率
     p_construction_area = scrapy.Field()  # 建筑面积
-    p_property_type = scrapy.Field()  # 物业类型
+    p_type_of_property = scrapy.Field()  # 物业类型
     p_planning_households = scrapy.Field()  # 规划户数
     p_property_rights = scrapy.Field()  # 产权年限
-    
+    p_property_type = scrapy.Field()  # 楼盘户型
 
+    # 售卖资格 Eligibility for sale
+    eligibility_for_sale = scrapy.Field()  # 售卖资格 json数组
 
+    # 配套信息 Supporting information
+    s_property_company = scrapy.Field()  # 物业公司
+    s_parking_ratio = scrapy.Field()  # 车位配比
+    s_property_costs = scrapy.Field()  # 物业费
+    s_heating_method = scrapy.Field()  # 供暖方式
+    s_water_method = scrapy.Field()  # 供水方式
+    s_power_method = scrapy.Field()  # 供电方式
+    s_parking_space = scrapy.Field()  # 车位
+    s_peripheral_planning = scrapy.Field()  # 周边规划
