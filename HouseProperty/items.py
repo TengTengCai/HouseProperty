@@ -11,7 +11,7 @@ import scrapy
 class HousePriceItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    province = scrapy.Field()  # 省
+    # province = scrapy.Field()  # 省
     city = scrapy.Field()  # 市
     properties = scrapy.Field()  # 楼盘名称
     alias = scrapy.Field()  # 楼盘别名
@@ -23,6 +23,7 @@ class HousePriceItem(scrapy.Item):
 
 
 class HouseDetailItem(scrapy.Item):
+    properties = scrapy.Field()
     # 基本信息
     b_property_type = scrapy.Field()  # 物业类型
     b_reference_price = scrapy.Field()  # 参考价格

@@ -33,16 +33,17 @@ DOWNLOAD_DELAY = 3
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED = False
+COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-  'Accept-Encoding': 'gzip, deflate, br',
-  'Accept-Language': 'een-US,en;q=0.5',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Language': 'een-US,en;q=0.5',
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36'
 }
 
 # Enable or disable spider middlewares
@@ -66,7 +67,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'HouseProperty.pipelines.HousepropertyPipeline': 300,
+    'HouseProperty.pipelines.HousePriceItemPipeline': 300,
+    # 'HouseProperty.pipelines.HouseDetailItemPipeline': 250,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -89,3 +91,8 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+DEPTH_LIMIT = 100
+# Redis Keys
+HOUSE_PRICE_URL_HASH = 'house_price_url_hash'
+HOUSE_DETAIL_URL_SET = 'house_detail_url_set'
