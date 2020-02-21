@@ -33,6 +33,7 @@ class LianjiaSpider(CrawlSpider):
         self.m = hashlib.md5()
         self.date = datetime.datetime.now().strftime('%Y-%m-%d')
 
+
     def parse_house_price_item(self, response):
         url = str(response.url).encode('utf-8')
         self.m.update(url)

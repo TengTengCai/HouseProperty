@@ -93,6 +93,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 DEPTH_LIMIT = 100
+
 # Redis Keys
 HOUSE_PRICE_URL_HASH = 'house_price_url_hash'
 HOUSE_DETAIL_URL_SET = 'house_detail_url_set'

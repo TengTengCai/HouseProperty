@@ -1,16 +1,18 @@
 import pymongo
 import redis as redis
+from scrapy.settings import Settings
 
 from HouseProperty.config import load_config
 
 conf = load_config()
-redis_conf = conf['redis']
-mongo_conf = conf['mongo']
+redis_conf = conf['REDIS']
+mongo_conf = conf['MONGO']
+email_conf = Settings(conf['E-MAIL'])
 pool = redis.ConnectionPool(
-    host=redis_conf['host'],
-    port=redis_conf['port'],
-    password=redis_conf['password'],
-    db=redis_conf['db'],
+    host=redis_conf['HOST'],
+    port=redis_conf['PORT'],
+    password=redis_conf['PASSWORD'],
+    db=redis_conf['DB'],
     max_connections=10
 )
 
@@ -24,23 +26,23 @@ class MongoConn(object):
         if host:
             self._host = host
         else:
-            self._host = mongo_conf['host']
+            self._host = mongo_conf['HOST']
         if port:
             self._port = port
         else:
-            self._port = mongo_conf['port']
+            self._port = mongo_conf['PORT']
         if user:
             self._user = user
         else:
-            self._user = mongo_conf['user']
+            self._user = mongo_conf['USER']
         if password:
             self._password = password
         else:
-            self._password = mongo_conf['password']
+            self._password = mongo_conf['PASSWORD']
         if db:
             self._db_name = db
         else:
-            self._db_name = mongo_conf['db']
+            self._db_name = mongo_conf['DB']
         self._client = pymongo.MongoClient(
             self._host,
             self._port,
@@ -53,3 +55,6 @@ class MongoConn(object):
 
     def get_house_detail_collection(self):
         return self._db['houseDetail']
+
+    def close_client(self):
+        self._client.close()
