@@ -25,7 +25,7 @@ class HousePriceItemPipeline(object):
         if isinstance(item, HousePriceItem):
             logger.info(type(item))
             # logger.info(item['properties'])
-            # self.house_price.insert_one(dict(item))
+            self.house_price.insert_one(dict(item))
         return item
 
 
