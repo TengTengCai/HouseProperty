@@ -18,12 +18,14 @@ class HousePriceItemPipeline(object):
         self.house_price = self._conn.get_house_price_collection()
 
     def process_item(self, item, spider):
+        if 'properties' not in item:
+            return item
         if not item['properties']:
             return item
         if isinstance(item, HousePriceItem):
             logger.info(type(item))
             # logger.info(item['properties'])
-            self.house_price.insert_one(dict(item))
+            # self.house_price.insert_one(dict(item))
         return item
 
 
@@ -33,6 +35,8 @@ class HouseDetailItemPipeline(object):
         self.house_detail = self._conn.get_house_detail_collection()
 
     def process_item(self, item, spider):
+        if 'properties' not in item:
+            return item
         if not item['properties']:
             return item
         if isinstance(item, HouseDetailItem):

@@ -67,7 +67,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'HouseProperty.pipelines.HousePriceItemPipeline': 300,
+    # 'HouseProperty.pipelines.HousePriceItemPipeline': 300,
     # 'HouseProperty.pipelines.HouseDetailItemPipeline': 250,
 }
 
@@ -96,3 +96,11 @@ DEPTH_LIMIT = 100
 # Redis Keys
 HOUSE_PRICE_URL_HASH = 'house_price_url_hash'
 HOUSE_DETAIL_URL_SET = 'house_detail_url_set'
+
+# lianjia Settings
+lianjia_settings = {
+    'ITEM_PIPELINES': {
+        'HouseProperty.pipelines.HousePriceItemPipeline': 300,
+        'HouseProperty.pipelines.HouseDetailItemPipeline': 350,
+    }
+}
