@@ -20,7 +20,7 @@ queuelib==1.5.0
 Scrapy==1.8.0
 service-identity==18.1.0
 six==1.13.0
-Twisted==19.10.0
+Twisted==22.2.0
 w3lib==1.21.0
 zope.interface==4.7.1
 attrs==19.3.0
@@ -46,7 +46,7 @@ queuelib==1.5.0
 Scrapy==1.8.0
 service-identity==18.1.0
 six==1.13.0
-Twisted==19.10.0
+Twisted==22.2.0
 w3lib==1.21.0
 zope.interface==4.7.1
 attrs==19.3.0
@@ -73,7 +73,7 @@ redis==3.4.1
 Scrapy==1.8.0
 service-identity==18.1.0
 six==1.13.0
-Twisted==19.10.0
+Twisted==22.2.0
 w3lib==1.21.0
 zope.interface==4.7.1
 attrs==19.3.0
@@ -113,7 +113,7 @@ Scrapy==1.8.0
 service-identity==18.1.0
 six==1.13.0
 traitlets==4.3.3
-Twisted==19.10.0
+Twisted==22.2.0
 w3lib==1.21.0git
 wcwidth==0.1.8
 zope.interface==4.7.1
